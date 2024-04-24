@@ -1,5 +1,7 @@
 package com.example.generatemassiverandomusers.utils;
 
+import com.example.generatemassiverandomusers.entity.Users;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -100,6 +102,20 @@ public class RandomValue {
         return map;
     }
 
+    /**
+     *  get one random user;
+     * @return one random user
+     */
+    public static Users getOneRandomUser(){
+        Users person = new Users();
+        person.setName(RandomValue.getChineseName());
+        person.setSex(RandomValue.name_sex);
+        person.setAge(RandomValue.getNum(1, 100));
+        person.setEmail(RandomValue.getEmail(4, 15));
+        person.setTel(RandomValue.getTel());
+        person.setAddress(RandomValue.getRoad());
+        return person;
+    }
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
             System.out.println(getAddress());
