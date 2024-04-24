@@ -47,4 +47,10 @@ class GenerateMassiveRandomUsersApplicationTests {
         System.out.println("插入1W条数据耗时：" + (eTime - bTime));
     }
 
+    @Test
+    public void insertOneUser() {
+        Users oneRandomUser = RandomValue.getOneRandomUser();
+        usersService.save(oneRandomUser);
+    }
+
 }
