@@ -1,6 +1,6 @@
 package com.example.generatemassiverandomusers.mapper;
 
-import com.example.generatemassiverandomusers.entity.Users;
+import com.example.generatemassiverandomusers.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author FlyHippo
  * @since 2024-04-24
  */
-public interface UsersMapper extends BaseMapper<Users> {
+public interface UsersMapper extends BaseMapper<User> {
 
 }

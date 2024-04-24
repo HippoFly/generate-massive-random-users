@@ -1,21 +1,14 @@
 package com.example.generatemassiverandomusers;
 
-import com.example.generatemassiverandomusers.entity.Users;
+import com.example.generatemassiverandomusers.entity.User;
 import com.example.generatemassiverandomusers.service.UsersService;
 import com.example.generatemassiverandomusers.utils.RandomValue;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 @SpringBootTest
-class GenerateMassiveRandomUsersApplicationTests {
+class GenerateMassiveRandomUserApplicationTests {
     private Integer begin = 0;//起始id
     private long end = begin + 1000;//每次循环插入的数据量
     @Autowired
@@ -25,7 +18,7 @@ class GenerateMassiveRandomUsersApplicationTests {
     @Test
     public void insertBigData2() {
         //创建一个人实例
-        Users person = new Users();
+        User person = new User();
         //计开始时间
         long bTime = System.currentTimeMillis();
         //开始循环，循环次数1W次。
@@ -49,7 +42,7 @@ class GenerateMassiveRandomUsersApplicationTests {
 
     @Test
     public void insertOneUser() {
-        Users oneRandomUser = RandomValue.getOneRandomUser();
+        User oneRandomUser = RandomValue.getOneRandomUser();
         usersService.save(oneRandomUser);
     }
 
